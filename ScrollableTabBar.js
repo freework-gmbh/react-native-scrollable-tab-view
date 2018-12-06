@@ -206,6 +206,11 @@ const ScrollableTabBar = createReactClass({
     if (width < WINDOW_WIDTH) {
       width = WINDOW_WIDTH;
     }
+    const tabCount = this.props.tabs.length;
+    if (this.tabCount !== undefined || tabCount === this.tabCount) {
+      return null;
+    }
+    this.tabCount = tabCount;
     this.setState({ _containerWidth: width, });
     this.updateView({value: this.props.scrollValue.__getValue(), });
   },
